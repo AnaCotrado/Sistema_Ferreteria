@@ -192,7 +192,7 @@ public class FrmLogin extends javax.swing.JFrame {
             String password = txtContraseña.getText();
 
             if(func.UserLista(userName,password)){
-                if(D_Usuario.nivelUsuario == 1){
+                if(D_Usuario.LnivelUsuario == 1){
                     new FrmKardexMenu().setVisible(true);
                 this.dispose();
                 }else{

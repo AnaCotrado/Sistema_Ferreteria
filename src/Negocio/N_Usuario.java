@@ -108,8 +108,7 @@ public class N_Usuario {
     }
     
     public boolean UserLista(String user, String password){
-        
-        Sql = "SELECT NombreUsuario,ApellidosUsuario,NivelUsuario FROM tb_usuario WHERE LoginUsuario='"+ user + "' AND ContraseñaUsuario='"+ password + "' AND EstadoUsuario=true";
+        Sql = "SELECT IdUsuario,NombreUsuario,ApellidosUsuario,NivelUsuario FROM tb_usuario WHERE LoginUsuario='"+ user + "' AND ContraseñaUsuario='"+ password + "' AND EstadoUsuario=true";
              
         try{
 
@@ -117,14 +116,14 @@ public class N_Usuario {
             ResultSet rs = st.executeQuery(Sql);
                         
             while(rs.next()){               
-                D_Usuario.nombre = rs.getString(1);
-                D_Usuario.apellido = rs.getString(2); 
-                D_Usuario.nivelUsuario = Integer.parseInt(rs.getString(3)); 
+                D_Usuario.LIdUsuario = rs.getInt(1);
+                D_Usuario.Lnombre = rs.getString(2);
+                D_Usuario.Lapellido = rs.getString(3); 
+                D_Usuario.LnivelUsuario = Integer.parseInt(rs.getString(4));
                 return true;
             }            
         }catch(SQLException e){
             JOptionPane.showMessageDialog(null,e);
-            
         }
         return false;
     }

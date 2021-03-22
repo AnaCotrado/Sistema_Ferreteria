@@ -50,6 +50,27 @@ public class N_Producto {
         }  
     }
     
+    public D_Producto Producto(int id){
+        D_Producto prod = new D_Producto();
+        Sql="SELECT * FROM tb_producto WHERE IdProducto="+id;
+        try{
+            Statement st = conect.createStatement();
+            ResultSet rs = st.executeQuery(Sql);
+            
+            while(rs.next()){
+                prod.setIdProducto(Integer.parseInt(rs.getString(1)));
+                prod.setNombre(rs.getString(2));
+                prod.setIdCategoria(Integer.parseInt(rs.getString(3)));
+                prod.setIdSucursal(Integer.parseInt(rs.getString(4)));
+                prod.setStock(Integer.parseInt(rs.getString(5)));
+            }
+            return prod;
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null,e);
+            return null;
+        }  
+    }
+    
     public boolean agregar(D_Producto datos){
         Sql = "INSERT INTO tb_producto(NombreProducto,IdCategoria,IdSucursal,StockProducto,PrecioProducto,DescripcionProducto) VALUES(?,?,?,?,?,?)";
         
@@ -139,4 +160,21 @@ public class N_Producto {
         }
         return lista;
     } 
+    
+    public boolean actualizarStock(D_Producto datos){
+        Sql = "UPDATE tb_producto SET StockProducto=? WHERE IdProducto=?";
+        
+        try{
+            PreparedStatement pst = conect.prepareStatement(Sql);
+            pst.setInt(1, datos.getStock());
+            
+            pst.setInt(2,datos.getIdProducto());
+            int n = pst.executeUpdate();
+            return n!=0;
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null,"Error al editar el stock " + e);
+            return false;
+        } 
+    }
+    
 }

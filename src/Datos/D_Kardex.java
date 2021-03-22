@@ -42,8 +42,8 @@ public class D_Kardex {
     }
 
     public Date getFechaHora() {
-        //DateFormat outputFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss"); 
-        //String outputString = outputFormat.format(FechaHora);
+        DateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd"); 
+        String outputString = outputFormat.format(FechaHora);
         return FechaHora;
     }
 

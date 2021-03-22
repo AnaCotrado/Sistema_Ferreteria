@@ -19,8 +19,8 @@ public class FrmKardexMenu extends javax.swing.JFrame {
     public FrmKardexMenu() {
         initComponents();
         setLocationRelativeTo(null);
-        txtNombre.setText(D_Usuario.nombre);
-        txtApellido.setText(D_Usuario.apellido);
+        txtNombre.setText(D_Usuario.Lnombre);
+        txtApellido.setText(D_Usuario.Lapellido);
     }
 
     public static String dIdAdministrador = "";

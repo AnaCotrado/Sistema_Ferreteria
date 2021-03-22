@@ -7,6 +7,7 @@ package Negocio;
 
 import Conexion.Conexion;
 import Datos.D_Kardex;
+import Datos.D_Producto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -30,14 +31,14 @@ public class N_Kardex {
         modelo.addColumn("IdKardex");
         modelo.addColumn("IdProducto");
         modelo.addColumn("IdEmpleado");
-        modelo.addColumn("Fecha y Hora");
+        modelo.addColumn("Fecha");
         modelo.addColumn("Cantidad");
         modelo.addColumn("Tipo");
         
         if(busqueda.equals("Seleccionar")){
             Sql="SELECT * FROM tb_kardexproducto";
         }else{
-            Sql="SELECT k.IdKardexProducto, k.IdProducto, k.IdEmpleado, k.FechaHoraKardexProducto, k.CantidadKardexProducto, k.TipoKardexProducto "
+            Sql="SELECT k.IdKardexProducto, k.IdProducto, k.IdEmpleado, k.FechaKardexProducto, k.CantidadKardexProducto, k.TipoKardexProducto "
                 + " FROM tb_kardexproducto as k "
                 + " JOIN tb_producto as p ON p.IdProducto = k.IdProducto "
                 + " WHERE p.NombreProducto = '" + busqueda + "'";
@@ -60,8 +61,28 @@ public class N_Kardex {
         }  
     }
     
+    public boolean comprobacion(D_Kardex datos){
+        N_Producto p = new N_Producto();
+        D_Producto dp = p.Producto(datos.getIdProducto());
+        int sactual = dp.getStock();
+        if(datos.isTipo()){
+            dp.setStock(sactual+ datos.getCantidad());
+        }else{
+            int cant = sactual-datos.getCantidad();
+            if( cant<0){
+                JOptionPane.showMessageDialog(null,"El stock disponible es menor al requerido.");
+                return false;
+            }else{
+                dp.setStock(sactual- datos.getCantidad());
+            }
+        }
+        agregar(datos);
+        p.actualizarStock(dp);
+        return true;
+    }
+    
     public boolean agregar(D_Kardex datos){
-        Sql = "INSERT INTO tb_kardexproducto(IdProducto,IdEmpleado,FechaHoraKardexProducto,CantidadKardexProducto,TipoKardexProducto) VALUES(?,?,?,?,?)";
+        Sql = "INSERT INTO tb_kardexproducto(IdProducto,IdEmpleado,FechaKardexProducto,CantidadKardexProducto,TipoKardexProducto) VALUES(?,?,?,?,?)";
         try{
             PreparedStatement pst = conect.prepareStatement(Sql);
             

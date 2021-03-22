@@ -3,8 +3,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Conexion/Conexion.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmKardexMenuEmp.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmSucursalIns.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmLogin.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Negocio/N_Kardex.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmEmpleadoIns.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmKardexMenu.java</file>
             <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Datos/D_Administrador.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmAdministradorMod.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmProducto.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmKardex.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmKardexIns.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Presentación/FrmCategoria.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Negocio/N_Administrador.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Conexion/Conexion.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Datos/D_Empleado.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Negocio/N_Empleado.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Negocio/N_Producto.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Datos/D_Usuario.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Datos/D_Producto.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Datos/D_Kardex.java</file>
+            <file>file:/D:/UPT/2021-I/Calidad%20y%20Pruebas%20de%20Software/Proyecto/SistemaInventario/src/Negocio/N_Usuario.java</file>
         </group>
     </open-files>
 </project-private>

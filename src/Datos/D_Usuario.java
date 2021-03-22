@@ -3,12 +3,17 @@ package Datos;
 public class D_Usuario {
     private int IdUsuario;
     private String dni;
-    public static String nombre;
-    public static String apellido;
+    private String nombre;
+    private String apellido;
     private String Login;
     private String password;
-    public static int nivelUsuario;
+    private int nivelUsuario;
     private boolean estado;
+    
+    public static int LIdUsuario;
+    public static String Lnombre;
+    public static String Lapellido;
+    public static int LnivelUsuario;
 
     public D_Usuario() {
     }

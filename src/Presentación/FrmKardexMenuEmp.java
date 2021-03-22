@@ -5,6 +5,7 @@
  */
 package Presentación;
 
+import Datos.D_Empleado;
 import Datos.D_Usuario;
 
 /**
@@ -19,12 +20,12 @@ public class FrmKardexMenuEmp extends javax.swing.JFrame {
     public FrmKardexMenuEmp() {
         initComponents();
         setLocationRelativeTo(null);
-        txtNombre.setText(D_Usuario.nombre);
-        txtApellido.setText(D_Usuario.apellido);
-        dIdEmpleado = "1";
+        txtNombre.setText(D_Usuario.Lnombre);
+        txtApellido.setText(D_Usuario.Lapellido);
+        dIdEmpleado = D_Empleado.LIdEmpleado;
     }
 
-    public static String dIdEmpleado = "";
+    public static int dIdEmpleado;
             
     /**
      * This method is called from within the constructor to initialize the form.

@@ -3,6 +3,7 @@ package Negocio;
 import Conexion.Conexion;
 import Datos.D_Empleado;
 import Datos.D_Sucursal;
+import Datos.D_Usuario;
 import java.sql.*;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
@@ -17,7 +18,7 @@ public class N_Empleado {
     public DefaultTableModel Lista(String busqueda){
        DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("IdEmpleado");
-        modelo.addColumn("idUsuario");
+        modelo.addColumn("IdUsuario");
         modelo.addColumn("IdSucursal");
         modelo.addColumn("Area");
         
@@ -130,5 +131,20 @@ public class N_Empleado {
             JOptionPane.showMessageDialog(null,e);
         }
         return lista;
+    }
+    
+    public void EmpleadoLogin(){
+        Sql ="SELECT IdEmpleado FROM tb_empleado WHERE IdUsuario="+D_Usuario.LIdUsuario;
+        try{
+            Statement st = conect.createStatement();
+            ResultSet rs = st.executeQuery(Sql);
+            
+            while(rs.next()){
+                D_Empleado.LIdEmpleado = rs.getInt("IdEmpleado");
+            }
+             
+        }catch(SQLException e){
+            JOptionPane.showMessageDialog(null,"Error al identificar empleado. " + e);
+        }
     }
 }

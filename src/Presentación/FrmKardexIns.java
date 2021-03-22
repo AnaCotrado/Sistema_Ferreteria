@@ -5,14 +5,13 @@
  */
 package Presentación;
 
+import Datos.D_Empleado;
 import Datos.D_Kardex;
+import Datos.D_Usuario;
+import Negocio.N_Empleado;
 import Negocio.N_Kardex;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Percy
- */
 public class FrmKardexIns extends javax.swing.JFrame {
 
     /**
@@ -21,10 +20,10 @@ public class FrmKardexIns extends javax.swing.JFrame {
     public FrmKardexIns() {
         initComponents();
         setLocationRelativeTo(null);
-        FrmKardex ventana = new FrmKardex();
-        txtIdProducto.setText(ventana.dIdProducto);
-        txtIdEmpleado.setText(ventana.dIdEmpleado);
-        
+        txtIdProducto.setText(String.valueOf(FrmKardex.dIdProducto));
+        N_Empleado empleado = new N_Empleado();
+        empleado.EmpleadoLogin();
+        txtIdEmpleado.setText(String.valueOf(D_Empleado.LIdEmpleado));
     }
 
     /**
@@ -195,34 +194,33 @@ public class FrmKardexIns extends javax.swing.JFrame {
     }//GEN-LAST:event_cboTipoActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-
+        FrmKardex ventana = new FrmKardex();
+        ventana.setVisible(true);      
+        this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
 
     private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
         if(txtCantidad.getText().equals("")){
             JOptionPane.showMessageDialog(this, "Ingrese una Cantidad","Mensaje",JOptionPane.WARNING_MESSAGE);
             txtCantidad.requestFocus();
-        }else if(cboTipo.getSelectedItem().equals("Entrada")){
+        }else{
             D_Kardex datos = new D_Kardex();
             
             datos.setIdProducto(Integer.parseInt(txtIdProducto.getText()));
             datos.setIdEmpleado(Integer.parseInt(txtIdEmpleado.getText()));
             datos.setCantidad(Integer.parseInt(txtCantidad.getText()));
-            datos.setTipo(true);
+            if(cboTipo.getSelectedIndex()==0){
+                datos.setTipo(true);
+            }else{
+                datos.setTipo(false);
+            }
             N_Kardex func = new N_Kardex();
-            func.agregar(datos);
-            JOptionPane.showMessageDialog(this, "Registrado correctamente");
-            new FrmEmpleado().setVisible(true);
-            this.dispose(); 
-            
-                   
-        }else if(cboTipo.getSelectedItem().equals("Salida")){    
-            
-                  
+            if(func.comprobacion(datos)){
+                JOptionPane.showMessageDialog(this, "Registrado correctamente");
+            }
+            new FrmKardex().setVisible(true);
+            this.dispose();   
         }
-  
-        FrmEmpleado ventana = new FrmEmpleado();
-        ventana.dIdEmpleado="";
     }//GEN-LAST:event_btnAceptarActionPerformed
 
     /**

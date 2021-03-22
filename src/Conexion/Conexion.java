@@ -6,9 +6,9 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class Conexion {
-    static String Login = "uk43ty6mn2lmvkz9";
-    static String Password = "h9hRm9nEYT3sr7pIru7s";
-    static String url = "jdbc:mysql://btnqhyzqrjxmq3zqrjpo-mysql.services.clever-cloud.com:3306/btnqhyzqrjxmq3zqrjpo?zeroDateTimeBehavior=CONVERT_TO_NULL";
+    static String Login = "Ana";
+    static String Password = "";
+    static String url = "jdbc:mysql://localhost:3306/db_ferreteria?zeroDateTimeBehavior=CONVERT_TO_NULL";
     
     public Conexion(){
     }

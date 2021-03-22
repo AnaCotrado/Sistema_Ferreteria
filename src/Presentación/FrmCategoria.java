@@ -238,7 +238,7 @@ public class FrmCategoria extends javax.swing.JFrame {
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
         dIdCategoria="";
-        if(D_Usuario.nivelUsuario == 1){
+        if(D_Usuario.LnivelUsuario == 1){
             new FrmKardexMenu().setVisible(true);
             this.dispose();
         }else{

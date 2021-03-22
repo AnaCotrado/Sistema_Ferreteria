@@ -6,6 +6,8 @@ public class D_Empleado {
     private int IdUsuario;
     private int IdSucursal;
     private String Area;
+    
+    public static int LIdEmpleado;
 
     public D_Empleado() {
     }

@@ -213,7 +213,8 @@ public class FrmKardex extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    public static String dIdKardex="",dIdProducto="", dIdEmpleado=FrmKardexMenuEmp.dIdEmpleado, dCantidad="", dTipo="";
+    public static String dIdKardex="", dCantidad="", dTipo="";
+    public static int dIdProducto;
     
     private void btnInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertarActionPerformed
         new FrmKardexIns().setVisible(true);
@@ -221,7 +222,8 @@ public class FrmKardex extends javax.swing.JFrame {
     }//GEN-LAST:event_btnInsertarActionPerformed
 
     private void btnMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenuActionPerformed
-        if(D_Usuario.nivelUsuario == 1){
+        if(D_Usuario.LnivelUsuario == 1){
+            dIdProducto = (cboProducto.getSelectedIndex());
             new FrmKardexMenu().setVisible(true);
             this.dispose();
         }else{
@@ -232,7 +234,7 @@ public class FrmKardex extends javax.swing.JFrame {
 
     private void cboProductoItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cboProductoItemStateChanged
         Mostrar(cboProducto.getSelectedItem().toString());
-        dIdProducto = "";
+        dIdProducto = (cboProducto.getSelectedIndex());
     }//GEN-LAST:event_cboProductoItemStateChanged
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
@@ -244,10 +246,10 @@ public class FrmKardex extends javax.swing.JFrame {
                 D_Kardex datos = new D_Kardex();
                 N_Kardex func = new N_Kardex();
 
-                datos.setIdProducto(Integer.parseInt(dIdProducto));
+                datos.setIdProducto(dIdProducto);
                 func.eliminar(datos);
                 Mostrar("");
-                dIdProducto="";
+                dIdProducto = (cboProducto.getSelectedIndex());
             }
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
@@ -261,7 +263,7 @@ public class FrmKardex extends javax.swing.JFrame {
         int fila = tablaKardex.rowAtPoint(evt.getPoint());
         
         dIdKardex = tablaKardex.getValueAt(fila,0).toString();
-        dIdProducto = tablaKardex.getValueAt(fila,1).toString();
+        dIdProducto = Integer.parseInt(tablaKardex.getValueAt(fila,1).toString());
         dCantidad = tablaKardex.getValueAt(fila,2).toString();
         dTipo = tablaKardex.getValueAt(fila,3).toString();
     }//GEN-LAST:event_tablaKardexMousePressed
