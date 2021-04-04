@@ -5,4 +5,4 @@ Diagrama de Clases:
 \\\\
 Diagrama de Arquitectura:
 \\\\
-![Diagrama de Arquitectura](https://github.com/AnaCotrado/Sistema_Ferreteria/blob/main/Diagramas/Diagrama de Arquitectura.png)
+![Diagrama de Arquitectura](https://github.com/AnaCotrado/Sistema_Ferreteria/blob/main/Diagramas/DiagramadeArquitectura.png)
